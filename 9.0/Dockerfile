@@ -56,9 +56,10 @@ RUN set -x; \
            python-chart
 
 # MS Fonts.
-RUN echo "deb http://gce_debian_mirror.storage.googleapis.com wheezy contrib non-free" >> /etc/apt/sources.list \
-  && echo "deb http://gce_debian_mirror.storage.googleapis.com wheezy-updates contrib non-free" >> /etc/apt/sources.list \
-  && echo "deb http://security.debian.org/ wheezy/updates contrib non-free" >> /etc/apt/sources.list
+RUN echo "deb http://ftp.us.debian.org/debian wheezy contrib non-free" >> /etc/apt/sources.list \
+  && echo "deb http://ftp.us.debian.org/debian wheezy-updates contrib non-free" >> /etc/apt/sources.list \
+  && echo "deb http://ftp.us.debian.org/debian wheezy-proposed-updates contrib non-free" >> /etc/apt/sources.list
+
 RUN apt-get update
 
 RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula \
